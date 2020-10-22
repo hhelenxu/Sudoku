@@ -48,7 +48,13 @@ public class InputListener implements ActionListener {
             }
         }
 
-        int input = Integer.parseInt(tfCells[rowChosen][colChosen].getText());
+        String in = tfCells[rowChosen][colChosen].getText();
+        if (in.length() > 1 || (in.charAt(0)<'1'||in.charAt(0)>'9')) {
+            JFrame f = new JFrame();
+            JOptionPane.showMessageDialog(f,"Error: please enter a valid number.\nInput should be one number 1-9");
+            return;
+        }
+        int input = Integer.parseInt(in);
         if (board[rowChosen][colChosen]==input) {
             tfCells[rowChosen][colChosen].setBackground(Color.GREEN);
             left[rowChosen][colChosen] = 0;

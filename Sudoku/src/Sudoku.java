@@ -2,6 +2,11 @@ import java.awt.*;
 import javax.swing.*;
 import java.util.Random;
 
+/**
+ * Sudoku game with 3 levels: easy, medium, and hard.
+ * Instructions for game: each row, column, and 3 by 3 square should have the numbers 1-9 with no repeats.
+ * To play, simply type in a number and press enter- if green, your answer is correct; if red, try again.
+ */
 
 public class Sudoku extends JFrame{
     public static final int GRID_SIZE = 9;
@@ -50,10 +55,6 @@ public class Sudoku extends JFrame{
         if (!stop) {
             generatePuzzle();
             Container cp = getContentPane();
-
-//            JPanel cp = new JPanel(new GridLayout(GRID_SIZE,GRID_SIZE));
-//            cp.setBorder(BorderFactory.createEmptyBorder(2,2,2,2));
-            //cp.setLayout(panel);
 
             cp.setLayout(new GridLayout(GRID_SIZE, GRID_SIZE));
 
